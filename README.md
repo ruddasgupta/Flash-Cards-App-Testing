@@ -23,11 +23,15 @@
 
 #### Coverage
 
-> coverage run -m unittest discover or coverage run app/routes.py
+> coverage run -m unittest discover
+
+> coverage run app/routes.py
 
 > coverage report -m 
 
-> coverage html or coverage xml
+> coverage html
+
+> coverage xml
 
 ## Architecture Diagram
 
