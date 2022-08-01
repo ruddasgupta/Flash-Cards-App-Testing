@@ -1,0 +1,101 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "description": "Score Service",
+      "version": "1.0.0",
+      "title": "Score Service",
+      "license": {
+        "name": "MIT",
+        "url": "https://opensource.org/licenses/MIT"
+      }
+    },
+    "servers": [
+        {
+          "url": "/"
+        }
+      ],
+      "tags": [
+        {
+          "name": "Score Service",
+          "description": "Score Service for Flash Card App"
+        }
+      ],
+      "paths": {
+        "/score": {
+            "post": {
+                "tags": [
+                  "Score Service"
+                ],
+                "summary": "Creates score for card",
+                "requestBody": {
+                    "description": "Create Score for card",
+                    "required": true,
+                    "content": {
+                      "application/json": {
+                        "schema": {
+                          "$ref": "#/components/schemas/createScore"
+                        }
+                      }
+                    }
+                  },
+                  "produces": [
+                    "application/json"
+                  ],
+                  "responses": {
+                    "201": {
+                      "description": "CREATED",
+                      "schema": {
+                        "$ref": "#/components/schemas/scoreOfCard"
+                      }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "createScore": {
+                "type": "object",
+                "properties": {
+                  "cardId": {
+                    "type": "string",
+                    "format": "string"
+                  },
+                  "userId": {
+                    "type": "string",
+                    "format": "string"
+                  }
+                }
+            },
+            "scoreOfCard": {
+                "type": "object",
+                "properties": {
+                  "attempts": {
+                    "type": "string",
+                    "format": "number"
+                  },
+                  "cardId": {
+                    "type": "string",
+                    "format": "number"
+                  },
+                  "id": {
+                    "type": "string",
+                    "format": "number"
+                  },
+                  "score": {
+                    "type": "string",
+                    "format": "number"
+                  },
+                  "timestamp": {
+                    "type": "string",
+                    "format": "string"
+                  },
+                  "userId": {
+                    "type": "string",
+                    "format": "number"
+                  }
+                }
+            }
+        }
+    }
+}

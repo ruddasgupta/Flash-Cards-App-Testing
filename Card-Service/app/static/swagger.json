@@ -1,0 +1,89 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "description": "Card Service",
+      "version": "1.0.0",
+      "title": "Card Service",
+      "license": {
+        "name": "MIT",
+        "url": "https://opensource.org/licenses/MIT"
+      }
+    },
+    "servers": [
+        {
+          "url": "/"
+        }
+      ],
+      "tags": [
+        {
+          "name": "Card Service",
+          "description": "Score Service for Flash Card App"
+        }
+      ],
+      "paths": {
+        "/card": {
+            "post": {
+                "tags": [
+                  "Card Service"
+                ],
+                "summary": "Creates card",
+                "requestBody": {
+                    "description": "Creates card",
+                    "required": true,
+                    "content": {
+                      "application/json": {
+                        "schema": {
+                          "$ref": "#/components/schemas/createCard"
+                        }
+                      }
+                    }
+                  },
+                  "produces": [
+                    "application/json"
+                  ],
+                  "responses": {
+                    "201": {
+                      "description": "CREATED",
+                      "schema": {
+                        "$ref": "#/components/schemas/cardCreatedMessage"
+                      }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "createCard": {
+                "type": "object",
+                "properties": {
+                  "topic": {
+                    "type": "string",
+                    "format": "string"
+                  },
+                  "question": {
+                    "type": "string",
+                    "format": "string"
+                  },
+                  "answer": {
+                    "type": "string",
+                    "format": "string"
+                  },
+                  "userId": {
+                    "type": "string",
+                    "format": "string"
+                  }
+                }
+            },
+            "cardCreatedMessage": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string",
+                    "format": "string"
+                  }
+                }
+            }
+        }
+    }
+}
