@@ -17,6 +17,7 @@ class TestAPI(unittest.TestCase):
     "message": "No card found!"
     }
 
+    @unittest.skip
     def test_get_one_card_200(self):
         resp = requests.get(self.URL+'card/1')
         self.assertEqual(resp.status_code, 200)
@@ -24,13 +25,14 @@ class TestAPI(unittest.TestCase):
         self.assertDictEqual(resp.json(), self.expected_response_200)
         print('test_get_one_card_200 completed!')
 
+    @unittest.skip
     def test_get_one_card_404(self):
         resp = requests.get(self.URL + 'card/11')
         self.assertEqual(resp.status_code, 404)
         self.assertDictEqual(resp.json(), self.expected_response_404)
         print('test_get_one_card_404 completed!')
 
-if __name__ == "__main__":
-    tester = TestAPI()
-    tester.test_get_one_card_200()
-    tester.test_get_one_card_404()
+# if __name__ == "__main__":
+#     tester = TestAPI()
+#     tester.test_get_one_card_200()
+#     tester.test_get_one_card_404()

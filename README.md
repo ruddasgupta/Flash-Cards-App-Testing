@@ -2,28 +2,44 @@
 
 ## Unzip the microservices before use
 
-### Endpoint
+### Endpoints
 > http://127.0.0.1:5000/
 
 ### User
 > http://127.0.0.1:5000/user
+> http://127.0.0.1:5000/healthcheck
+> http://127.0.0.1:5000/environment
 
 ### Card
 > http://127.0.0.1:5001/card
+> http://127.0.0.1:5001/healthcheck
+> http://127.0.0.1:5001/environment
 
 ### Score
 > http://127.0.0.1:5002/score
+> http://127.0.0.1:5002/healthcheck
+> http://127.0.0.1:5002/environment
 
 ### Test File
 * test_api.py
 
 #### Usage
 
+##### unittest
+
 > python test_api.py
+
+##### pytest
+
+> pytest -v
 
 #### Coverage
 
+##### All Files
+
 > coverage run -m unittest discover
+
+##### Individual Files
 
 > coverage run app/routes.py
 
@@ -73,3 +89,6 @@
 * https://martinfowler.com/articles/microservices.html
 * https://docs.python.org/3/library/unittest.html
 * https://coverage.readthedocs.io/en/6.4/
+* https://docs.python.org/3/library/unittest.mock.html
+* https://docs.pytest.org/en/7.1.x/
+* https://pypi.org/project/py-healthcheck/

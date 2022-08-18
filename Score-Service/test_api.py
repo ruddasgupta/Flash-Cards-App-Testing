@@ -5,10 +5,10 @@ class TestAPI(unittest.TestCase):
     URL = 'http://127.0.0.1:5002/'
 
     expected_response_200 = {
-    "attempts": 0,
+    "attempts": 12,
     "cardId": 1,
     "id": 1,
-    "score": 0,
+    "score": 6,
     "timestamp": "Mon, 23 May 2022 07:02:26 GMT",
     "userId": 2
     }
@@ -31,6 +31,4 @@ class TestAPI(unittest.TestCase):
         print('test_get_total_score_404 completed!')
 
 if __name__ == "__main__":
-    tester = TestAPI()
-    tester.test_get_total_score_200()
-    tester.test_get_total_score_404()
+    unittest.main()
