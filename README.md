@@ -27,6 +27,7 @@
 
 ### Test File
 * test_api.py
+* test_routes.py
 
 #### Usage
 
